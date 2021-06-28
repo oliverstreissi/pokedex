@@ -7,6 +7,7 @@ import { theme } from "./theme/theme";
 import Header from "./components/common/header/Header";
 import PokemonsGrid from "./container/pokemonsGrid/pokemonsGrid";
 import PokemonDetails from "./components/pokemonDetails/PokemonDetails";
+import NotFound from "./components/notFound/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={PokemonsGrid} />
           <Route path="/pokemon/:pokemonId" component={PokemonDetails} />
+          <Route component={NotFound} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>
