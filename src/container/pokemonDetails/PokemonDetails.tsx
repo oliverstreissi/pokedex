@@ -5,13 +5,8 @@ import {
   Card,
   CardContent,
   CardActions,
-  Typography,
   Grid,
   Button,
-  Table,
-  TableCell,
-  TableRow,
-  TableBody,
 } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 

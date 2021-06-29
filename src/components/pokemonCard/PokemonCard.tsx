@@ -36,7 +36,7 @@ export default function PokemonCard({ pokeData }: { pokeData: IPokemonUrl }) {
               alt={pokemon.name}
               className={classes.picture}
             />
-            <Typography className={classes.name} color="textSecondary">
+            <Typography variant="h6" className={classes.name}>
               {pokemon.name}
             </Typography>
           </CardContent>
