@@ -6,7 +6,7 @@ export default function LoadingSpinner() {
   return (
     <div className={classes.root}>
       <img
-        src="/assets/pokeball.png"
+        src={process.env.PUBLIC_URL + "/assets/pokeball.png"}
         alt="pokeball"
         className={classes.pokeball}
       />

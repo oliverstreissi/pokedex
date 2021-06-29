@@ -11,7 +11,7 @@ export default function Header() {
       <AppBar position="fixed" className={classes.appBar}>
         <Link to="/" className={classes.link}>
           <img
-            src="/assets/pokedex_logo.png"
+            src={process.env.PUBLIC_URL + "/assets/pokedex_logo.png"}
             alt="pokedex"
             className={classes.logo}
           />
