@@ -11,8 +11,8 @@ import NotFound from "./components/notFound/NotFound";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <CssBaseline />
         <Header />
         <Switch>
@@ -20,8 +20,8 @@ function App() {
           <Route path="/pokemon/:pokemonId" component={PokemonDetails} />
           <Route component={NotFound} />
         </Switch>
-      </ThemeProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

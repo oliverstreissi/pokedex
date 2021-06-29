@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import useStyles from "../../components/pokemonDetails/styles";
+import useStyles from "./styles";
 import {
   Card,
   CardContent,
