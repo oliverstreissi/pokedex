@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import useStyles from "./styles";
 import { fetchAllPokemon } from "../../api/api";
 import { IPokemonUrl } from "../../types/types";
 import { Grid, Button } from "@material-ui/core";
 
+import useStyles from "./styles";
 import PokemonCard from "../../components/pokemonCard/PokemonCard";
 import LoadingSpinner from "../../components/common/loadingSpinner/LoadingSpinner";
 

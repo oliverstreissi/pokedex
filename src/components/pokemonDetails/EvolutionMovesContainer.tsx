@@ -1,5 +1,4 @@
 import React from "react";
-import useStyles from "./styles";
 import {
   Grid,
   Typography,
@@ -10,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { useHistory } from "react-router";
 import { IEvolutionItem, IPokemon } from "../../types/types";
+import useStyles from "./styles";
 
 export default function TitleContainer({
   pokemon,

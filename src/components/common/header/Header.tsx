@@ -1,7 +1,7 @@
 import React from "react";
-import useStyles from "./styles";
 import { AppBar } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import useStyles from "./styles";
 
 export default function Header() {
   const classes = useStyles();

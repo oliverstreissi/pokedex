@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import useStyles from "./styles";
 import {
   Card,
   CardContent,
@@ -10,6 +9,7 @@ import {
 } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
+import useStyles from "./styles";
 import { fetchPokemon, fetchEvolutionChain } from "../../api/api";
 import { IEvolutionItem, IPokemon, ParamTypes } from "../../types/types";
 import LoadingSpinner from "../../components/common/loadingSpinner/LoadingSpinner";

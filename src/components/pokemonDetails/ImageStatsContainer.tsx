@@ -1,5 +1,4 @@
 import React from "react";
-import useStyles from "./styles";
 import {
   Grid,
   Typography,
@@ -9,6 +8,7 @@ import {
   TableCell,
 } from "@material-ui/core";
 import { IPokemon } from "../../types/types";
+import useStyles from "./styles";
 
 export default function TitleContainer({ pokemon }: { pokemon: IPokemon }) {
   const classes = useStyles();
@@ -26,7 +26,7 @@ export default function TitleContainer({ pokemon }: { pokemon: IPokemon }) {
         <Typography className={classes.subtitle} gutterBottom>
           Basic Stats
         </Typography>
-        <Table size="small" className={classes.table}>
+        <Table className={classes.table} size="small">
           <TableBody>
             {pokemon.stats.map((stat, index) => (
               <TableRow key={index}>

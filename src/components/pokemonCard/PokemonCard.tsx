@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import useStyles from "./styles";
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { fetchPokemon } from "../../api/api";
 import { IPokemon, IPokemonUrl } from "../../types/types";
+import useStyles from "./styles";
 
 export default function PokemonCard({ pokeData }: { pokeData: IPokemonUrl }) {
   const classes = useStyles();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
-import useStyles from "./styles";
 import { IPokemon } from "../../types/types";
+import useStyles from "./styles";
 
 export default function TitleContainer({ pokemon }: { pokemon: IPokemon }) {
   const classes = useStyles();
