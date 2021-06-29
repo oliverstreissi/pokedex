@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useStyles from "./styles";
 import { fetchAllPokemon } from "../../api/api";
-import { IPokemon, IPokemonUrl } from "../../types/types";
+import { IPokemonUrl } from "../../types/types";
 import { Grid, Button } from "@material-ui/core";
 
 import PokemonCard from "../../components/pokemonCard/PokemonCard";

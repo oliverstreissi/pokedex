@@ -6,7 +6,7 @@ import { theme } from "./theme/theme";
 
 import Header from "./components/common/header/Header";
 import PokemonsGrid from "./container/pokemonsGrid/pokemonsGrid";
-import PokemonDetails from "./components/pokemonDetails/PokemonDetails";
+import PokemonDetails from "./container/pokemonDetails/PokemonDetails";
 import NotFound from "./components/notFound/NotFound";
 
 function App() {
