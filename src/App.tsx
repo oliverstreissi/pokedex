@@ -11,7 +11,7 @@ import NotFound from "./components/notFound/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
