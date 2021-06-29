@@ -16,6 +16,9 @@ export default makeStyles((theme: Theme) => ({
     textAlign: "center",
     fontFamily: "'Bangers', cursive",
     fontSize: 28,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 22,
+    },
   },
   picture: {
     height: "100%",
