@@ -1,4 +1,5 @@
 import React from "react";
+import useStyles from "./styles";
 import {
   Grid,
   Typography,
@@ -7,7 +8,6 @@ import {
   TableRow,
   TableCell,
 } from "@material-ui/core";
-import useStyles from "./styles";
 import { useHistory } from "react-router";
 import { IEvolutionItem, IPokemon } from "../../types/types";
 

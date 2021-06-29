@@ -1,4 +1,4 @@
-import { IEvolutionItem, IPokemonUrl } from "../types/types";
+import { IEvolutionItem, IPokemon, IPokemonUrl } from "../types/types";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 export const fetchAllPokemon = async (
@@ -17,7 +17,7 @@ export const fetchPokemon = async (url: string): Promise<any> => {
   return axios
     .get(url)
     .then((response: AxiosResponse) => response.data)
-    .then((data) => ({
+    .then<IPokemon>((data: any) => ({
       id: data.id,
       name: data.name,
       picture: data.sprites.other["official-artwork"].front_default,

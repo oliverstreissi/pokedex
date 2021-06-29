@@ -1,4 +1,5 @@
 import React from "react";
+import useStyles from "./styles";
 import {
   Grid,
   Typography,
@@ -7,7 +8,6 @@ import {
   TableRow,
   TableCell,
 } from "@material-ui/core";
-import useStyles from "./styles";
 import { IPokemon } from "../../types/types";
 
 export default function TitleContainer({ pokemon }: { pokemon: IPokemon }) {
