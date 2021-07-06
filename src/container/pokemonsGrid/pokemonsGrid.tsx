@@ -9,7 +9,7 @@ import LoadingSpinner from "../../components/common/loadingSpinner/LoadingSpinne
 
 export default function PokemonsGrid() {
   const classes = useStyles();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [pokemons, setPokemons] = useState<IPokemon[]>([]);
   const [offset, setOffset] = useState(0);
   const limit = 48;
@@ -17,7 +17,6 @@ export default function PokemonsGrid() {
   //fetch data
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       fetchAllPokemon(offset, limit).then((data: IPokemon[]) => {
         setPokemons((prevPokemons) => [...prevPokemons, ...data]);
         setIsLoading(false);
