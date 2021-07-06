@@ -32,29 +32,32 @@ export default function PokemonsGrid() {
   };
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        {pokemons &&
-          pokemons.map((pokemon: IPokemon, index: number) => (
-            <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
-              <PokemonCard pokeData={pokemon} />
-            </Grid>
-          ))}
-      </Grid>
-      <div className={classes.spinnerWrapper}>
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : (
-          <Button
-            size="large"
-            variant="contained"
-            color="primary"
-            onClick={loadMore}
-          >
-            Load more
-          </Button>
-        )}
+    <React.Fragment>
+      <div className={classes.toolbar} />
+      <div className={classes.root}>
+        <Grid container spacing={3}>
+          {pokemons &&
+            pokemons.map((pokemon: IPokemon, index: number) => (
+              <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
+                <PokemonCard pokeData={pokemon} />
+              </Grid>
+            ))}
+        </Grid>
+        <div className={classes.spinnerWrapper}>
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            <Button
+              size="large"
+              variant="contained"
+              color="primary"
+              onClick={loadMore}
+            >
+              Load more
+            </Button>
+          )}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }

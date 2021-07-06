@@ -44,36 +44,39 @@ export default function PokemonDetails() {
   }, [pokemonId]);
 
   return (
-    <Card className={classes.card}>
-      <CardActions>
-        <Button
-          onClick={() => history.push("/")}
-          startIcon={<ArrowBackIcon />}
-          variant="outlined"
-          size="medium"
-          color="secondary"
-        >
-          Back
-        </Button>
-      </CardActions>
-      <CardContent>
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : (
-          pokemon &&
-          evolutionChain && (
-            <Grid container spacing={5}>
-              <TitleContainer pokemon={pokemon} />
-              <ImageStatsContainer pokemon={pokemon} />
-              <TypeAbilitiesContainer pokemon={pokemon} />
-              <EvolutionMovesContainer
-                pokemon={pokemon}
-                evolutionChain={evolutionChain}
-              />
-            </Grid>
-          )
-        )}
-      </CardContent>
-    </Card>
+    <React.Fragment>
+      <div className={classes.toolbar} />
+      <Card className={classes.card}>
+        <CardActions>
+          <Button
+            onClick={() => history.push("/")}
+            startIcon={<ArrowBackIcon />}
+            variant="outlined"
+            size="medium"
+            color="secondary"
+          >
+            Back
+          </Button>
+        </CardActions>
+        <CardContent>
+          {isLoading ? (
+            <LoadingSpinner />
+          ) : (
+            pokemon &&
+            evolutionChain && (
+              <Grid container spacing={5}>
+                <TitleContainer pokemon={pokemon} />
+                <ImageStatsContainer pokemon={pokemon} />
+                <TypeAbilitiesContainer pokemon={pokemon} />
+                <EvolutionMovesContainer
+                  pokemon={pokemon}
+                  evolutionChain={evolutionChain}
+                />
+              </Grid>
+            )
+          )}
+        </CardContent>
+      </Card>
+    </React.Fragment>
   );
 }

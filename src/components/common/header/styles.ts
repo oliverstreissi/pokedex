@@ -18,4 +18,12 @@ export default makeStyles((theme: Theme) => ({
       transform: "scale(1.02)",
     },
   },
+  [theme.breakpoints.down("sm")]: {
+    appBar: {
+      height: 60,
+    },
+    logo: {
+      height: 50,
+    },
+  },
 }));
