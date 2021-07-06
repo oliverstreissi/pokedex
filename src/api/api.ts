@@ -4,13 +4,22 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 export const fetchAllPokemon = async (
   offset: number,
   limit: number
-): Promise<IPokemonUrl[]> => {
+): Promise<any> => {
   const url: string = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
-  return axios
-    .get(url)
-    .then((response: AxiosResponse) => response.data.results)
-    .catch((error: AxiosError) => console.error(error));
+  try {
+    const response: AxiosResponse = await axios(url);
+    const pokemonUrlList: IPokemonUrl[] = response.data.results;
+
+    return Promise.all(
+      pokemonUrlList.map(async (pokemon) => {
+        const pokemonData: IPokemon = await fetchPokemon(pokemon.url);
+        return pokemonData;
+      })
+    );
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const fetchPokemon = async (url: string): Promise<any> => {

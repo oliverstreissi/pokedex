@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import {
   Card,
@@ -6,38 +6,25 @@ import {
   CardActionArea,
   Typography,
 } from "@material-ui/core";
-import { fetchPokemon } from "../../api/api";
-import { IPokemon, IPokemonUrl } from "../../types/types";
+import { IPokemon } from "../../types/types";
 import useStyles from "./styles";
 
-export default function PokemonCard({ pokeData }: { pokeData: IPokemonUrl }) {
+export default function PokemonCard({ pokeData }: { pokeData: IPokemon }) {
   const classes = useStyles();
   const history = useHistory();
-  const [pokemon, setPokemon] = useState<IPokemon>();
-
-  //fetch data
-  useEffect(() => {
-    const fetchData = async () => {
-      fetchPokemon(pokeData.url).then((data) => {
-        setPokemon(data);
-      });
-    };
-
-    fetchData();
-  }, [pokeData]);
 
   return (
     <Card className={classes.root}>
-      {pokemon && (
-        <CardActionArea onClick={() => history.push("/pokemon/" + pokemon.id)}>
+      {pokeData && (
+        <CardActionArea onClick={() => history.push("/pokemon/" + pokeData.id)}>
           <CardContent>
             <img
-              src={pokemon.picture}
-              alt={pokemon.name}
+              src={pokeData.picture}
+              alt={pokeData.name}
               className={classes.picture}
             />
             <Typography variant="h6" className={classes.name}>
-              {pokemon.name}
+              {pokeData.name}
             </Typography>
           </CardContent>
         </CardActionArea>
