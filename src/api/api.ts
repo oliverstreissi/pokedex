@@ -1,5 +1,5 @@
 import { IEvolutionItem, IPokemon, IPokemonUrl } from "../types/types";
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 
 export const fetchAllPokemon = async (
   offset: number,
@@ -26,7 +26,7 @@ export const fetchPokemon = async (url: string): Promise<any> => {
   return axios
     .get(url)
     .then((response: AxiosResponse) => response.data)
-    .then<IPokemon>((data: any) => ({
+    .then<IPokemon>((data) => ({
       id: data.id,
       name: data.name,
       picture: data.sprites.other["official-artwork"].front_default,
@@ -37,7 +37,9 @@ export const fetchPokemon = async (url: string): Promise<any> => {
       moves: data.moves,
       species: data.species.url, //required to get possible evolutions
     }))
-    .catch((error: AxiosError) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 export const fetchEvolutionChain = async (url: string): Promise<any> => {

@@ -13,7 +13,7 @@ export default function TitleContainer({ pokemon }: { pokemon: IPokemon }) {
           color="textSecondary"
           className={classes.title}
         >
-          # {pokemon.order}
+          # {pokemon.id}
         </Typography>
       </Grid>
       <Grid item xs={12} sm>
