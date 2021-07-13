@@ -14,9 +14,12 @@ import { fetchPokemon, fetchEvolutionChain } from "../../api/api";
 import { IEvolutionItem, IPokemon, ParamTypes } from "../../types/types";
 import LoadingSpinner from "../../components/common/loadingSpinner/LoadingSpinner";
 import TitleContainer from "../../components/pokemonDetails/TitleContainer";
-import ImageStatsContainer from "../../components/pokemonDetails/ImageStatsContainer";
-import TypeAbilitiesContainer from "../../components/pokemonDetails/TypeAbilitiesContainer";
-import EvolutionMovesContainer from "../../components/pokemonDetails/EvolutionMovesContainer";
+import Stats from "../../components/pokemonDetails/Stats";
+import Image from "../../components/pokemonDetails/Image";
+import Abilities from "../../components/pokemonDetails/Abilities";
+import Types from "../../components/pokemonDetails/Types";
+import Moves from "../../components/pokemonDetails/Moves";
+import Evolutions from "../../components/pokemonDetails/Evolutions";
 
 export default function PokemonDetails() {
   const classes = useStyles();
@@ -66,12 +69,12 @@ export default function PokemonDetails() {
             evolutionChain && (
               <Grid container spacing={5}>
                 <TitleContainer pokemon={pokemon} />
-                <ImageStatsContainer pokemon={pokemon} />
-                <TypeAbilitiesContainer pokemon={pokemon} />
-                <EvolutionMovesContainer
-                  pokemon={pokemon}
-                  evolutionChain={evolutionChain}
-                />
+                <Image pokemon={pokemon} />
+                <Stats stats={pokemon.stats} />
+                <Abilities abilities={pokemon.abilities} />
+                <Types types={pokemon.types} />
+                <Evolutions evolutionChain={evolutionChain} />
+                <Moves moves={pokemon.moves} />
               </Grid>
             )
           )}

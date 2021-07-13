@@ -1,4 +1,4 @@
-interface Ability {
+export interface Ability {
   ability: {
     name: string;
     url: string;
@@ -6,20 +6,20 @@ interface Ability {
   is_hidden: boolean;
 }
 
-interface Type {
+export interface Type {
   type: {
     name: string;
   };
 }
 
-interface Stat {
+export interface Stat {
   base_stat: number;
   stat: {
     name: string;
   };
 }
 
-interface Move {
+export interface Move {
   move: {
     name: string;
   };

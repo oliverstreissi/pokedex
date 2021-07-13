@@ -1,4 +1,3 @@
-import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { IPokemon } from "../../types/types";
 import useStyles from "./styles";
